@@ -1,2 +1,2 @@
 # LawnHouse
-Smart greenhouse intended for plant trials. 
+Smart greenhouse intended for plant trials. and things
