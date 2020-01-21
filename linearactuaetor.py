@@ -1,9 +1,15 @@
-import RPI.GPIO as GPIO
-import time
+from time import sleep
+from gpiozero import LED
 
-relay1 = 17
-relay2 = 27
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(relay1, GPIO.OUT)
-GPIO.setup(relay2, GPIO.OUT)
+relay1 = LED(17)
+relay2 = LED(27)
+
+while True:
+    relay1.on()
+    relay2.on()
+    sleep(2)
+    relay1.off()
+    relay2.off()
+    sleep(2)
+    print ("running")
