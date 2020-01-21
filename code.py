@@ -3,7 +3,7 @@ import board
 import busio
 import adafruit_sht31d
 import csv
-import Adafruit_IO
+from Adafruit_IO import Client, RequestError, Feed
 
 # the header names for the csv file
 HEADER = ['Temperature', 'Temperature1', 'Humidity', 'Humidity1', 'Time']
