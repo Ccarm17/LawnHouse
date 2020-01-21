@@ -50,6 +50,9 @@ while True:
     print("Humidity: %0.1f %%" % sensor1.relative_humidity)
 
     aio.send_data(temperature.key, sensor.temperature)
+    aio.send_data(temperature1.key, sensor1.temperature)
+    aio.send_data(humidity.key, sensor.relative_humidity)
+    aio.send_data(humidity1.key, sensor1.relative_humidity)
 
     loopcount += 1
     time.sleep(sleepTime)
