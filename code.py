@@ -6,6 +6,9 @@ import csv
 from Adafruit_IO import Client, RequestError, Feed
 from gpiozero import LED
 
+
+relay1 = LED(17)
+relay2 = LED(27)
 # the header names for the csv file
 HEADER = ['Temperature', 'Temperature1', 'Humidity', 'Humidity1', 'Time']
 sleepTime = 20
@@ -54,6 +57,14 @@ while True:
     aio.send_data(temperature1.key, "%0.1f" % sensor1.temperature)
     aio.send_data(humidity.key,"%0.1f" % sensor.relative_humidity)
     aio.send_data(humidity1.key,"%0.1f" % sensor1.relative_humidity)
+
+    if sensor.temperature < 25:
+            relay1.on()
+            relay2.off()
+    else:
+            relay1.off()
+            relay2.on()
+
 
     loopcount += 1
     time.sleep(sleepTime)
